@@ -1,9 +1,15 @@
 {
   "canisters": {
+    "chapter_2": {
+      "main": "src/chapter_2/main.mo",
+      "type": "motoko"
+    },
     "first_project_backend": {
       "main": "src/first_project_backend/main.mo",
       "type": "motoko"
     },
+   
+
     "first_project_frontend": {
       "dependencies": [
         "first_project_backend"
