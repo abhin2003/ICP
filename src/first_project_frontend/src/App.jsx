@@ -18,6 +18,7 @@ function App() {
     }
   };
 
+
   const handleAddMember = async (event) => {
     event.preventDefault();
     try {
@@ -72,7 +73,7 @@ function App() {
             {members.map((member, index) => (
               <tr key={index}>
                 <td>{member.name}</td>
-                <td>{member.age}</td>
+                <td>{member.age.toString()}</td>
               </tr>
             ))}
           </tbody>
