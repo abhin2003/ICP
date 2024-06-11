@@ -1,9 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Members({ members, isLoading }) {
+  const navigate = useNavigate();
+
   return (
     <div>
       <h2>All Members</h2>
+      <button onClick={() => navigate('/members/new')}>Add Member</button>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
