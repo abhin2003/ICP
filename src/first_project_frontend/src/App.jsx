@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { chapter_2 } from 'declarations/chapter_2';
 import Members from './Members';
 import AddMember from './AddMember';
 
 function App() {
   const [members, setMembers] = useState([]);
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -26,12 +24,9 @@ function App() {
     fetchMembers();
   }, []);
 
-  const handleAddMember = async (event) => {
-    event.preventDefault();
+  const handleAddMember = async (values) => {
     try {
-      await chapter_2.addMember({ name, age: Number(age) });
-      setName('');
-      setAge('');
+      await chapter_2.addMember({ name: values.name, age: Number(values.age) });
       const membersArray = await chapter_2.getAllMembers();
       setMembers(membersArray);
     } catch (error) {
@@ -46,13 +41,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/members" />} />
           <Route path="/members" element={<Members members={members} isLoading={isLoading} />} />
-          <Route path="/members/new" element={<AddMember handleAddMember={handleAddMember} name={name} setName={setName} age={age} setAge={setAge} />} />
+          <Route path="/members/new" element={<AddMember handleAddMember={handleAddMember} />} />
         </Routes>
       </main>
     </Router>
   );
 }
-
-
 
 export default App;

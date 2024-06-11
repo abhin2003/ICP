@@ -16,6 +16,8 @@
     "src/first_project_frontend"
   ],
   "dependencies": {
-    "react-router-dom": "^6.23.1"
+    "formik": "^2.4.6",
+    "react-router-dom": "^6.23.1",
+    "yup": "^1.4.0"
   }
 }

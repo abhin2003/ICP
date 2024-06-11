@@ -17,6 +17,15 @@ actor chapter_2{
 
     /// Function to add Member 
     public shared({ caller }) func addMember(member: Member): async Result.Result<(), Text> {
+
+
+        if (member.age < 1) {
+            return #err("Age must be greater than or equal to 1");
+        } else if (member.age > 100) {
+            return #err("Age must be less than or equal to 100");
+        };
+
+    
         switch (members.get(caller)) {
             case (null) {
                 members.put(caller, member);
