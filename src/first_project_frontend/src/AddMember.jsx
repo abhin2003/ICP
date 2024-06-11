@@ -4,8 +4,8 @@ function AddMember({ handleAddMember, name, setName, age, setAge }) {
   return (
     <div>
       <h2>Add Member</h2>
-      <form onSubmit={handleAddMember}>
-        <div>
+      <form onSubmit={handleAddMember} className="form">
+        <div className="input-group">
           <label htmlFor="name">Name:</label>
           <input
             type="text"
@@ -15,7 +15,7 @@ function AddMember({ handleAddMember, name, setName, age, setAge }) {
             required
           />
         </div>
-        <div>
+        <div className="input-group">
           <label htmlFor="age">Age:</label>
           <input
             type="number"

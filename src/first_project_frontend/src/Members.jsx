@@ -18,7 +18,7 @@ function Members({ members, isLoading }) {
             {members.map((member, index) => (
               <tr key={index}>
                 <td>{member.name}</td>
-                <td>{member.age}</td>
+                <td>{member.age.toString()}</td>
               </tr>
             ))}
           </tbody>
