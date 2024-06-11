@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Yup from 'yup';
 
 function Members({ members, isLoading }) {
   return (
