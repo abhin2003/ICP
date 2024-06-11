@@ -13,7 +13,7 @@ const AddMemberSchema = Yup.object().shape({
     .required('Age is required')
 });
 
-function AddMember({ handleAddMember, name, setName, age, setAge }) {
+function AddMember({ handleAddMember }) {
   return (
     <div>
       <h2>Add Member</h2>
