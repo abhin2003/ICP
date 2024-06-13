@@ -12,8 +12,25 @@ actor chapter_2{
         age: Nat;
     };
 
+    stable var stableMembers : [(Principal, Member)] = [];
+
     // Initialize the HashMap
     let members = HashMap.HashMap<Principal, Member>(0, Principal.equal, Principal.hash);
+
+
+    
+
+
+    system func preupgrade() {
+    stableMembers := Iter.toArray(members.entries());
+  };
+
+  system func postupgrade() {
+    stableMembers := [];
+  };
+
+
+
 
     /// Function to add Member 
     public shared({ caller }) func addMember(member: Member): async Result.Result<(), Text> {

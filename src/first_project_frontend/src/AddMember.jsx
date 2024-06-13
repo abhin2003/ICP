@@ -11,6 +11,7 @@ const AddMemberSchema = Yup.object().shape({
     .min(1, 'Age must be at least 1')
     .max(100, 'Age must be at most 100')
     .required('Age is required')
+    .integer("Age must be an integer")
 });
 
 function AddMember({ handleAddMember }) {
