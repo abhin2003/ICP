@@ -14,6 +14,8 @@ const AddMemberSchema = Yup.object().shape({
     .integer("Age must be an integer")
 });
 
+
+///function to add members
 function AddMember({ handleAddMember }) {
   return (
     <div>
